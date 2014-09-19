@@ -5,7 +5,7 @@ then
 	echo"Error."
 	exit
 fi
-./a.out $1 > ascii.txt
+./a.out $1 > ascii.txt #compilation of mta.c will give a.out
 awk '$9 ~ /NT/ {print $4"\t-->\t"$10}' ascii.txt > file.txt
 awk '{print $1}' file.txt > num.txt
 awk '{print $3}' file.txt > note.txt
@@ -27,3 +27,4 @@ awk '{if($3 != 0)
 paste -d "\t-->\t" n9.txt note.txt > output.txt
 cat time.txt
 rm n* f*
+#the output of this file can be used to write a lilypond file to get the desired pdf containing the notations
